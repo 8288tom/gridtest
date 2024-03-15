@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://player.idomoo.com/latest/main.js"></script>
+
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div id="idm-player-1" class="video-item">
+        </div>
+        <div id="idm-player-2" class="video-item">
+        </div>
+        <div id="idm-player-3" class="video-item">
+        </div>
+        <div id="idm-player-4" class="video-item">
+        </div>
+        <div id="idm-player-5" class="video-item">
+        </div>
+        <div id="idm-player-6" class="video-item">
+        </div>
+        <div id="idm-player-7" class="video-item">
+        </div>
+        <div id="idm-player-8" class="video-item">
+        </div>
+        <div id="idm-player-9" class="video-item">
+        </div>
+        <div id="idm-player-10" class="video-item">
+        </div>
+        <div id="idm-player-11" class="video-item">
+        </div>
+        <div id="idm-player-12" class="video-item">
+        </div>
+        <div id="idm-player-13" class="video-item">
+        </div>
+        <div id="idm-player-14" class="video-item">
+        </div>
+        <div id="idm-player-15" class="video-item">
+        </div>
+    </div>
+
+    <style>
+        .grid-container {
+            display: grid;
+            margin: auto;
+
+            grid-gap: 15px;
+            width: 800px;
+            /* Space between videos */
+            grid-template-columns: repeat(3, 1fr);
+            /* Adjust column size */
+        }
+
+        .video-item {
+            overflow: hidden;
+            /* Ensures no video overflow */
+            position: relative;
+            align-self: center;
+            height: 450px;
+            width: 100%;
+            /* Initially for 16:9, but let's adjust this */
+
+            /* Helps maintain aspect ratio */
+        }
+
+        .video-item video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Cover or contain based on preference */
+        }
+
+        .video-item::before {
+            content: '';
+            float: left;
+            padding-top: 100%;
+            /* Default for 1:1 aspect ratio */
+        }
+
+        .video-item::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+    <script>
+        var urls = [
+            "https://v.idomoo.ai/15383/0000/adrian51118618e4b641dab5f41636591ead67.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian786166db48474030a34e1265d6ad6dbe.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian6e76710491bc4636b1e6584bff46e54f.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian3736a1def1b74926b2d42713c1e20efb.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian54f31cc74edd420c8914d0da1d465a49.mp4",
+            "https://v.idomoo.ai/15383/0000/adrianb1a6c5eee8df439882eab624ff633921.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian8ac3cb76c777442f8a6a0b1fbc227ea4.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian92a6c35aa2a84c318b60df9131e74b8c.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian0bbb765615744abf99f4cd0a6e7e1df1.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian0bbb765615744abf99f4cd0a6e7e1df1.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian0bbb765615744abf99f4cd0a6e7e1df1.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian92a6c35aa2a84c318b60df9131e74b8c.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian0bbb765615744abf99f4cd0a6e7e1df1.mp4",
+            "https://v.idomoo.ai/15383/0000/adrian92a6c35aa2a84c318b60df9131e74b8c.mp4"
+        ]
+        for (var i = 1; i < urls.length; i++) {
+            idmPlayerCreate(
+                player_options = {
+                    interactive: false,
+                    fluid_mode: true,
+                    src: urls[i],
+                    autoplay: false,
+                    mute: false,
+                    minimal_version: false,
+                    disabled_control_bar: true,
+                    idm_logo: false,
+                    toolbar_position: 'low'
+                },
+                `idm-player-${i}`
+            )
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
